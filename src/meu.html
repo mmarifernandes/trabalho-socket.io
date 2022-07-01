@@ -7,10 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
         body {
+            
             margin: 0;
             padding-bottom: 3rem;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
+            background-color: rgb(34, 11, 59);
+
         }
 
         #form {
@@ -59,26 +63,50 @@
         }
 
         #messages>li:nth-child(odd) {
-            background: #efefef;
+            background: #5d398b;
+        }
+
+        .container{
+            float: right;
+            width: 75%;
+            text-align: left;
+            color: #fff;
+        }
+        #form{
+            width: 75%;
+            left: auto;
+            right: auto;
+        }
+        .left{
+            float: left;
+            color: #fff;
+            margin-left: 2%;
+            /* background-color: #5d398b; */
         }
     </style>
 </head>
 
 <body>
+    <div class="left">
     <h3>Usuários online</h3>
     <div id="usuarios">
     </div>
-    <div id="messages"></div>
-    
 
     <form id="form2" action="">
         <input id="inputnick" autocomplete="off" /><button>Salvar Nick</button>
     </form>
+    </div>
+    <center>
+    <div class="container">
+    <div id="messages"></div>
+    
+
 
     <form id="form" action="">
         <input id="input" autocomplete="off" /><button>Send</button>
     </form>
-
+</div>
+</center>
     <script src="/socket.io/socket.io.js"></script>
     <script>
         var socket = io();
